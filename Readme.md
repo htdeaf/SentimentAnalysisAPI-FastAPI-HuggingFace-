@@ -25,10 +25,8 @@ L’application est conçue pour être :
 .
 ├── app/
 │   ├── main.py          # Application FastAPI
-│   ├── utils.py         # Fonctions utilitaires
-│   └── model.py         # Chargement du modèle Hugging Face
 ├── static/
-│   └── index.html       # Mini interface HTML
+│   └── test.html       # Mini interface HTML
 ├── tests/
 │   └── test_api.py      # Tests unitaires
 ├── requirements.txt     # Dépendances Python
