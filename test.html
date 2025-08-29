@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse de sentiment</title>
+  <!-- CDN Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center">
+  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">🔍 Analyse de sentiment</h2>
+    
+    <!-- Formulaire -->
+    <form action="/submit" method="post" class="flex flex-col space-y-4">
+      <input 
+        name="text" 
+        type="text" 
+        id="myInput" 
+        placeholder="Écrivez quelque chose..." 
+        required
+        class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+      <button 
+        type="submit" 
+        id="myButton"
+        class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition duration-200"
+      >
+        Envoyer
+      </button>
+    </form>
+
+    <!-- Résultat -->
+    {% if result %}
+      <div class="mt-6">
+        <h3 class="text-lg font-semibold text-gray-700">📊 Résultat :</h3>
+        <pre class="bg-gray-900 text-green-400 text-sm p-4 rounded-lg overflow-x-auto mt-2">
+{{ result | tojson(indent=2) }}
+        </pre>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
